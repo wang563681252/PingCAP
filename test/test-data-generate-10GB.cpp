@@ -19,7 +19,7 @@ bool check_url_bit(int x)  //Guaranteed output is in English and numbers
 int main()
 {
 	int before_url, after_url, out_put;  
-	freopen("text1-10GB.txt", "w", stdout);
+	freopen("test1-10GB.txt", "w", stdout);
 	long long tot = Size / per_url_size;  //The number of url
 
 
