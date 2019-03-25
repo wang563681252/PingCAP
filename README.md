@@ -1,4 +1,5 @@
-# PingCAP-homework-dreamstart
+# PingCAP-homework-dreamstar(王朝鹏)
+
 ## 开始截至时间
 
 - 开始时间 | 北京时间：2019 年 3 月 25 日，16:30
@@ -15,3 +16,16 @@
 - 注意代码风格与规范，添加必要的单元测试和文档
 - 注意异常处理，尝试优化性能
 
+## 解决思路
+
+首先将100GB的url根据hash值分到200个子文件（可能会出现某一个文件很大的情况），对每一个文件求一个每个文件中url出现次数的top100，然后将200个文件的top100合并，这样就可以求出来出现次数top100的url和它的次数。
+
+### 发现的问题
+
+在子文件生成后可能会出现某一个文件很大的情况，这个时候再将这个文件中的url用另外一个hash函数将他们分成一半。
+
+## Test result
+
+- **System:** Windows 10 64-bit
+- **CPU:** AMD Ryzen 5 2600X Six-Core Processor @ 3.6 GHz
+- **RAM:** 16.0GB
