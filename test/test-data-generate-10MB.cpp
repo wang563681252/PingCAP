@@ -1,5 +1,5 @@
 /*
-	Randomly generate a 10GB url file
+	Randomly generate a 10MB url file
 
 	Author:dreamstart(Zhaopeng Wang)
 */
@@ -7,7 +7,7 @@
 #include <cstdio>
 #include <cstdlib>
 using namespace std;
-const long long Size = 1e7;  //10GB file has about 1e10 byte
+const long long Size = 1e7;  //10MB file has about 1e7 byte
 const long long per_url_size = 100;  //Byte length per url
 
 bool check_url_bit(int x)  //Guaranteed output is in English and numbers
