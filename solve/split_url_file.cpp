@@ -12,7 +12,7 @@
 using namespace std;
 const int file_nums = 200; //The url subfile numbers
 
-int Hash(const string &s)  //hash函数
+int Hash(const string &s)  //hash function
 {
 	const int base = 107;
 	int res = 0;
@@ -23,7 +23,7 @@ int Hash(const string &s)  //hash函数
 	return res;
 }
 
-void split_file(const string &file_name) //将大文件按值写入小文件
+void split_file(const string &file_name) //Write large files to small files by value
 {
 	ifstream turn_on;
 	turn_on.open(file_name);
