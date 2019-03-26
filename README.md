@@ -32,6 +32,6 @@
 
 ## Test result
 
-- **System:** Windows 10 64-bit
-- **CPU:** AMD Ryzen 5 2600X Six-Core Processor @ 3.6 GHz
-- **RAM:** 16.0GB
+- **System:** Windows 10 64-bit  &  macOS Mojave 10.14
+- **CPU:** AMD Ryzen 5 2600X Six-Core Processor @ 3.6 GHz  &  Inter Core i5 2.7GHz
+- **RAM:** 16.0GB  &  8GB
