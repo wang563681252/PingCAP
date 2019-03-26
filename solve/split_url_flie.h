@@ -4,4 +4,4 @@
 using namespace std;
 
 int Hash(const string &s);
-void flie(const string &flie_name);
+void split_file(const string &file_name);
