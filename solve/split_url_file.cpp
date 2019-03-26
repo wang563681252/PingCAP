@@ -37,7 +37,7 @@ void split_file(const string &file_name) //Write large files to small files by v
 	while(turn_on >> s) 
 	{
 		int hash_s = Hash(s);
-		hash_s = hash_s % file_nums;
+		hash_s = hash_s % file_nums + 1;
 		ofstream write_in;
 		write_in.open("hash_url_" + to_string(hash_s) + ".txt", ios::app);
 		write_in << s << endl;
