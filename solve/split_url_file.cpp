@@ -5,6 +5,7 @@
  */
 
 
+#include <cstdlib>
 #include <fstream>
 #include <cstring>
 #include <iostream>
@@ -27,6 +28,11 @@ void split_file(const string &file_name) //Write large files to small files by v
 {
 	ifstream turn_on;
 	turn_on.open(file_name);
+	if(!turn_on.is_open()) 
+	{
+		cout << "The file was not found" << endl;
+		exit(-1);
+	}
 	string s;
 	while(turn_on >> s) 
 	{
@@ -41,9 +47,11 @@ void split_file(const string &file_name) //Write large files to small files by v
 }
 
 //unit testing
+/*
 int main()
 {
 	string file_name = "data.txt";
 	split_file(file_name);
 	return 0;
 }
+*/
