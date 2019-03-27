@@ -1,4 +1,5 @@
 sudo: true
 language: cpp 
 compiler: g++
+install: true
 script: true
