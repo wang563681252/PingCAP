@@ -1,9 +1,13 @@
 /*
  * 
  * Top100 calculates the number of URL occurrences in each subfile
- * Ended  Time*  : 二  3/26 16:54:01 2019
+ * 
+ * Author: dreamstart 
+ *         2019.03.26
  */
 
+#ifndef COUNT_SUBFILE
+#define COUNT_SUBFILE
 
 #include <cstdio>
 #include <cstring>
@@ -13,4 +17,8 @@
 #include <unordered_map>
 using namespace std;
 
-void count_top100(const int file_nums);
+
+//Read each subfile and calculate the url of the top100 occurrences and write them to the same file
+string count_top100(int file_nums);
+
+#endif
