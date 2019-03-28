@@ -2,6 +2,8 @@
  *
  * Split large files into small files
  *
+ * Author:  dreamstart 
+ * 			2019.03.26
  */
 
 
@@ -11,7 +13,6 @@
 #include <iostream>
 #include "split_url_file.h"
 using namespace std;
-const int file_nums = 200; //The url subfile numbers
 
 int Hash(const string &s)  //hash function
 {
@@ -24,7 +25,7 @@ int Hash(const string &s)  //hash function
 	return res;
 }
 
-void split_file(const string &file_name) //Write large files to small files by value
+void split_file(const string file_name, const int &file_nums) //Write large files to small files by hash value
 {
 	ifstream turn_on;
 	turn_on.open(file_name);
@@ -33,6 +34,8 @@ void split_file(const string &file_name) //Write large files to small files by v
 		cout << "The file was not found" << endl;
 		exit(-1);
 	}
+
+	//Write the file by value after the s string hash
 	string s;
 	while(turn_on >> s) 
 	{
@@ -43,6 +46,7 @@ void split_file(const string &file_name) //Write large files to small files by v
 		write_in << s << endl;
         write_in.close();
 	}
+	turn_on.close();
 	return ;
 }
 
