@@ -1,6 +1,7 @@
 /*
- *
- * 
+ * 1.Hash each url into the subfile
+ * 2.Count the top100 url in each subfile and output on a file
+ * 3.Find the total top100 and output it
  * 
  * Author: dreamstart
  *		   2019.03.27
@@ -14,7 +15,7 @@
 #include "split_url_file.h"
 #include "ALL_TOP100.h"
 using namespace std;
-const int file_nums = 200; //The url subfile numbers
+int file_nums = 200; //The url subfile numbers
 
 int main()
 {
