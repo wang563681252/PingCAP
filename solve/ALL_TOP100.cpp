@@ -15,7 +15,7 @@ using namespace std;
 
 bool cmp(url_node q, url_node w) //Redefining the judgment condition of the sort function
 {
-	return q.x > w.x;
+	return q.count > w.count;
 }
 
 //Combine the top100 of all the subfiles and find all the top100 and output
@@ -42,8 +42,8 @@ void solve_top100(const string file_name, const int &nums)
 	sort(arr, arr + tot, cmp);
 	for(int i = 0; i < 100; i++)
 	{
-		if(arr[i].x == 0) break;
-		wout << arr[i].url << " The number of occurrences:" << arr[i].count << endl;
+		if(arr[i].count == 0) break;
+		wout << arr[i].url << endl << "The number of occurrences:" << arr[i].count << endl << endl;
 	}
 	readin.close();
 	wout.close();
