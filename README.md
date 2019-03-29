@@ -22,7 +22,7 @@
 
 ### 发现的问题
 
-在子文件生成后可能会出现某一个文件很大的情况，这个时候再将这个文件中的url用另外一个hash函数将他们分成一半。
+在子文件生成后可能会出现某一个文件很大的情况，那么会计算每个文件的大小，如果该url放入炒过多少个的时候会在以后将此hash值的url放到以后的一个文件中。
 
 ### 步骤
 
@@ -30,28 +30,35 @@
 - 对每个子文件中的URL进行出现次数的统计，并且统计出top100的url出现次数
 - 将所有子文件中的top100写入一个文件，利用200个文件的top100求出总的top100
 
-## 语言环境
+## 开发环境
 
-C++11
+语言：C++11
 
 ## 项目文件解释
 
 - main.cpp程序运行的主函数，里面有三个大的子函数，函数分别对应以下文件：
   - split_file函数是在split_url_file.cpp文件中，具体作用是输入一个需要计算top100的url文件名（需要在同一文件夹下），将这个文件分解成多个子文件。
   - count_top100函数是在count_subfile_top100.cpp文件中，具体作用是输入一个已经生成文件的个数，然后求出每个子文件的top100，并且输出在一个文件里。
-  - solve_top100函数是在ALL-TOP100.cpp文件中，具体作用是将综合起来的所有子文件的top100求一个top100
+  - solve_top100函数是在ALL_TOP100.cpp文件中，具体作用是将综合起来的所有子文件的top100求一个top100
+- Makefile为脚本文件
+- CMakeLists.txt是cmake的配置文件
+- build文件夹是cmake的配置文件
 
 ## 产生文件解释
 
 - split_file.cpp运行后会生成对应个数的hash之后的子文件，例如："hash_url_1.txt"，"hash_url_123.txt"
 - count_subfile_top100.cpp运行后会生成一个"subfile_top100.txt"文件，这里面放的是每个子文件的top100的url及其出现次数（每行有一组数据，为：出现次数和url，出现次数在前面，url在后面）
-- ALL-TOP100.cpp运行后会生成"url_top100.txt"文件，里面存的是总的top100的url及其出现次数（每行有一组数据，为：url及其出现次数，url在前面，出现次数在后面）
+- ALL_TOP100.cpp运行后会生成"url_top100.txt"文件，里面存的是总的top100的url及其出现次数（每三行有一组数据，第一行为url，第二行为出现次数）
 
 ## 心路历程
 
 
 
-## Test result
+## 未解决问题
+
+如果某一个字文件的size很大之后会把之后的url放入到另外一个文件，这个时候会出现每个文件url统计的问题，也就是说同一个url在两个文件中出现的情况，但是暂时没想到比较好的解决方法。
+
+## test result
 
 - **System:** Windows 10 64-bit  &  macOS Mojave 10.14
 - **CPU:** AMD Ryzen 5 2600X Six-Core Processor @ 3.6 GHz  &  Inter Core i5 2.7GHz
