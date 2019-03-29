@@ -20,7 +20,7 @@ int file_nums = 200; //The url subfile numbers
 int main()
 {
 	string file_name = "data.txt"; //the url txt name
-	split_file(file_name, file_nums); //the nums is number of the subfile
+	file_nums = split_file(file_name, file_nums); //the nums is number of the subfile
 	
 	//Find the top100 of the number of url occurrences in each subfile and write it to a file
 	string final_file = count_top100(file_nums); 
