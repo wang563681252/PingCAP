@@ -12,10 +12,6 @@
 #include <algorithm>
 #include "ALL_TOP100.h"
 using namespace std;
-struct url_node {
-	string url;
-	int count;
-};
 
 bool cmp(url_node q, url_node w) //Redefining the judgment condition of the sort function
 {
