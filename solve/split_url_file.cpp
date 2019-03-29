@@ -11,6 +11,7 @@
 #include <fstream>
 #include <cstring>
 #include <iostream>
+#include <map>
 #include "split_url_file.h"
 using namespace std;
 
@@ -27,6 +28,8 @@ int Hash(const string &s)  //hash function
 
 void split_file(const string file_name, const int &file_nums) //Write large files to small files by hash value
 {
+	map<int, int> flag; //Mark how many urls are stored in this subfile
+
 	ifstream turn_on;
 	turn_on.open(file_name);
 	if(!turn_on.is_open()) 
@@ -41,6 +44,8 @@ void split_file(const string file_name, const int &file_nums) //Write large file
 	{
 		int hash_s = Hash(s);
 		hash_s = hash_s % file_nums + 1;
+
+		//output
 		ofstream write_in;
 		write_in.open("hash_url_" + to_string(hash_s) + ".txt", ios::app);
 		write_in << s << endl;
